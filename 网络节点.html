@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>节点网页</title>
+  <script>
+    function getUrlParams() {
+      //获取当前日期的年月日
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始，所以要加1
+      var day = String(date.getDate()).padStart(2, '0'); // 日期
+      //拼接成完整的URL
+      for (let index = 0; index < 6; index++) {
+        var url = "https://node.freeclashnode.com/uploads/" + year + "/" + month + "/" + index + "-" + year + month + day + ".txt";
+        //在线标签页打开网址
+        window.open(url, '_blank');
+      }
+
+    } 
+  </script>
+</head>
+
+<body>
+  <button onclick="getUrlParams()">获取节点</button>
+</body>
+
+</html>
