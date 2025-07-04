@@ -13,12 +13,16 @@
       var month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始，所以要加1
       var day = String(date.getDate()).padStart(2, '0'); // 日期
       //拼接成完整的URL
-      for (let index = 0; index < 6; index++) {
+      for (let index = 4; index >= 0; index--) {
         var url = "https://node.freeclashnode.com/uploads/" + year + "/" + month + "/" + index + "-" + year + month + day + ".txt";
-        //在线标签页打开网址
-        window.open(url, '_blank');
+       if(index == 0){
+          //如果是第0个节点，直接在当前窗口打开
+          window.location.href = url;
+       }
+       else{
+         window.open(url, '_blank');
+       }
       }
-
     } 
   </script>
 </head>
