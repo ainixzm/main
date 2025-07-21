@@ -18,13 +18,7 @@
       //拼接成完整的URL
       for (let index = 4; index >= 0; index--) {
         var url = "https://node.freeclashnode.com/uploads/" + year + "/" + month + "/" + index + "-" + year + month + day + ".txt";
-        if (index == 0) {
-          //如果是第0个节点，直接在当前窗口打开
-          window.location.href = url;
-        }
-        else {
-          window.open(url, '_blank');
-        }
+        window.open(url, '_blank');
       }
     }
   </script>
