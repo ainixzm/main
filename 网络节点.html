@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>节点网页</title>
   <script>
+    window.onload = function() {
+      var today = new Date();
+      var year = today.getFullYear();
+      var month = String(today.getMonth() + 1).padStart(2, '0'); // 月份从0开始，所以要加1
+      var day = String(today.getDate()).padStart(2, '0'); // 日期
+      var formattedDate = year + '-' + month + '-' + day;
+      
+      document.getElementById("date_val").value = formattedDate;
+    };
+    
     function getUrlParams() {
       var x = document.getElementById("date_val");
       //获取当前日期的年月日
@@ -21,6 +31,7 @@
         window.open(url, '_blank');
       }
     }
+     
   </script>
 </head>
 
